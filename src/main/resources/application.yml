@@ -1,0 +1,15 @@
+category:
+  api:
+    baseUrl: https://sandbox.askfractal.com
+    token: ${category.api.baseUrl}/token
+    categoryId: ${category.api.baseUrl}/{categoryId}/transactions
+    categoryUpdate: ${category.api.baseUrl}/categories
+
+api:
+ key: dacEQUxjTZ3h6FXlg0Tg63mGVRjYdR3547LFDpl2
+ partnerId: 79670b6efde945e6a9d9d5a143e7ccf6
+
+
+
+
+

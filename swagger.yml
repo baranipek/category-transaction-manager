@@ -1,0 +1,150 @@
+swagger: '2.0' #version of Swagger
+info: # Categories transactions
+  description: Category Transaction Service
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+host: localhost:8080
+basePath: /api/v1
+tags:
+  - name: categories
+    description: Category Transaction operations
+schemes:
+  - http
+paths:
+  /categories/{categoryId}:
+    get:
+      tags:
+        - "categories"
+      summary: "Find category transaction by category id"
+      description: "Returns a single category transaction"
+      operationId: "getPetById"
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters:
+        - name: "categoryId"
+          in: "path"
+          description: "ID of category"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/CategoryTransaction"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Category transaction not found"
+        500:
+          description: "Interval server error"
+
+  /categories:
+    put:
+      tags:
+        - "categories"
+      summary: "Update Category Transaction"
+      description: "This updates the category transaction with transaction id and category id "
+      operationId: "update Category"
+      produces:
+        - "application/xml"
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Updated category  object"
+          required: true
+          schema:
+            $ref: "#/definitions/CategoryUpdateRequest"
+      responses:
+        204:
+          description: "content  processed"
+        400:
+          description: "Bad request "
+        404:
+          description: "Category transaction not found"
+        500:
+          description: "Interval server error"
+
+definitions: # AuthResponse response of the call
+  AuthResponse: #AuthResponse Object
+    type: object
+    properties: #Object properties
+      access_token: #accesToken attribute
+        type: string
+        description: Token for api call
+      partner_name: #partnerName attribute
+        type: string
+        description: The partner name of the client for api call
+      partner_id: #partnerId attribute
+        type: string
+        description: The partner id of the client for api call
+      expires: #expires attribute
+          type: string
+          description: Token expire interval
+      token_type: #tokenType attribute
+        type: string
+        description: Type of the token
+
+  Transaction:
+    type: object
+    properties: #Object properties
+      company_id: #companyId
+        type: string
+        description: Bank id of the transaction
+      bank_id: #bankId
+        type: string
+        description: Bank id of the transaction
+      account_id: #accountId attribute
+        type: string
+        description: The account id of the transaction
+      transaction_id: #transctionId attribute
+        type: string
+        description: The id of the transaction
+      value_date: #valueDate attribute
+        type: string
+        description: The date of the value
+      booking_date: #bookingDate attribute
+        type: string
+        description: The date of the booked
+      amount: #amount attribute
+        type: integer
+        description: The amount of the transaction
+      currency_code: #currency_code attribute
+        type: string
+        description: The currency of the transaction
+      flow: #flow attribute
+        type: string
+        description: The flow type
+      transaction_type: #transactionType attribute
+        type: string
+        description: The type of the transction
+      status: #status attribute
+        type: string
+        description: The status of the transction
+      category: #category attribute
+        type: string
+        description: The category of the transction
+
+  CategoryTransaction:
+    type: object
+    required:
+      - results
+    properties:
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/Transaction'
+
+  CategoryUpdateRequest: #Transaction Object
+    type: object
+    properties: #Object properties
+      transaction_id: #transactionId
+        type: string
+        description:  id of the transaction
+      category_id: #categoryId
+        type: string
+        description: category id of the transaction
+
+
