@@ -2,6 +2,7 @@
 
 ## 1. How to run
 ```
+$ git clone https://github.com/baranipek/category-transaction-manager.git
 $ mvn spring-boot:run
 
 ```
