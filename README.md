@@ -6,7 +6,7 @@ $ mvn spring-boot:run
 
 ```
 
-## 1. How to run
+## 1. How to test
 ```
 $ mvn clean test 
 
