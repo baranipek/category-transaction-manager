@@ -33,6 +33,10 @@ public class TransactionUpdateServiceImpl implements TransactionUpdateService {
     @Value("${api.partnerId}")
     private String partnerId;
 
+    /**
+     * Update category transaction request
+     * @param categoryUpdateRequest holds category update request
+     */
     @Override
     public ResponseEntity<Void> transactionCategoryUpdate(CategoryUpdateRequest categoryUpdateRequest) {
         Optional<String> token = authenticateService.getToken();

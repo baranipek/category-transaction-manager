@@ -33,6 +33,11 @@ public class TransactionReadServiceImpl implements TransactionReadService {
     @Value("${api.partnerId}")
     private String partnerId;
 
+    /**
+     * Returns category transactions by category id
+     * @param categoryId holds category id
+     * @return Optional<CategoryTransaction> returns category transactions
+     */
     @Override
     public Optional<CategoryTransaction> getCategoryTransaction(String categoryId) {
         if (categoryId.isEmpty()) {
