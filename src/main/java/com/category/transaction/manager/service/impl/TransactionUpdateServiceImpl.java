@@ -34,7 +34,7 @@ public class TransactionUpdateServiceImpl implements TransactionUpdateService {
     private String partnerId;
 
     /**
-     * Update category transaction request
+     * Update category transactions
      * @param categoryUpdateRequest holds category update request
      */
     @Override
