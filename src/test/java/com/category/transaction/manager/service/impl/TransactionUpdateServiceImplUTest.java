@@ -38,7 +38,7 @@ public class TransactionUpdateServiceImplUTest {
         String token = "token";
 
         when(authenticateService.getToken()).thenReturn(Optional.of(token));
-        ResponseEntity<Void> actual = transactionUpdateService.transactionCategoryUpdate(categoryUpdateRequest);
+        ResponseEntity<Void> actual = transactionUpdateService.updateCategoryTransaction(categoryUpdateRequest);
 
         // then
         assertEquals(actual.getStatusCode(), HttpStatus.NO_CONTENT);
@@ -51,6 +51,6 @@ public class TransactionUpdateServiceImplUTest {
         categoryUpdateRequest.setCategoryId("catId");
 
         when(authenticateService.getToken()).thenReturn(Optional.empty());
-        transactionUpdateService.transactionCategoryUpdate(categoryUpdateRequest);
+        transactionUpdateService.updateCategoryTransaction(categoryUpdateRequest);
     }
 }

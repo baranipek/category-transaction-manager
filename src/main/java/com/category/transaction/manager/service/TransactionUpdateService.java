@@ -4,5 +4,5 @@ import com.category.transaction.manager.domain.CategoryUpdateRequest;
 import org.springframework.http.ResponseEntity;
 
 public interface TransactionUpdateService  {
-    ResponseEntity<Void> transactionCategoryUpdate(CategoryUpdateRequest categoryUpdateRequest);
+    ResponseEntity<Void> updateCategoryTransaction(CategoryUpdateRequest categoryUpdateRequest);
 }

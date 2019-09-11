@@ -25,7 +25,7 @@ public class TransactionUpdateServiceImplITTest {
         request.setCategoryId("a6hg1");
         request.setTransactionId("fakeTrx01");
 
-        assertEquals(updateService.transactionCategoryUpdate(request).getStatusCode(), HttpStatus.NO_CONTENT);
+        assertEquals(updateService.updateCategoryTransaction(request).getStatusCode(), HttpStatus.NO_CONTENT);
     }
 
 }

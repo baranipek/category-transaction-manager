@@ -38,7 +38,7 @@ public class TransactionUpdateServiceImpl implements TransactionUpdateService {
      * @param categoryUpdateRequest holds category update request
      */
     @Override
-    public ResponseEntity<Void> transactionCategoryUpdate(CategoryUpdateRequest categoryUpdateRequest) {
+    public ResponseEntity<Void> updateCategoryTransaction(CategoryUpdateRequest categoryUpdateRequest) {
         Optional<String> token = authenticateService.getToken();
 
         if (!token.isPresent()) {

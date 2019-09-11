@@ -36,6 +36,6 @@ public class CategoryApi {
 
     @PutMapping
     ResponseEntity<?> updateCategoryTransaction(@RequestBody CategoryUpdateRequest updateRequest) {
-        return transactionUpdateService.transactionCategoryUpdate(updateRequest);
+        return transactionUpdateService.updateCategoryTransaction(updateRequest);
     }
 }
