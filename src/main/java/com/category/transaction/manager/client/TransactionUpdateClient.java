@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import static com.category.transaction.manager.constant.ApplicationConstant.*;
 
-@FeignClient(name = "transactionUpdateClient", url = "${category.api.categoryUpdate}", configuration = ClientConfiguration.class)
+@FeignClient(name = "transactionUpdateClient", url = "${category.api.categories}", configuration = ClientConfiguration.class)
 public interface TransactionUpdateClient {
     @PutMapping
     ResponseEntity<Void> updateCategoryTransaction(@RequestHeader(name = AUTHORIZATION_API_KEY) String apiKey,

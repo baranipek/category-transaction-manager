@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import static com.category.transaction.manager.constant.ApplicationConstant.*;
 
 
-@FeignClient(name = "transactionReadClient", url = "${category.api.categoryUpdate}", configuration = ClientConfiguration.class)
+@FeignClient(name = "transactionReadClient", url = "${category.api.categories}", configuration = ClientConfiguration.class)
 public interface TransactionReadClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/{categoryId}/transactions")
